@@ -8,6 +8,10 @@ const options = {
 const io = require("socket.io")(3000, options);
 
 io.on("connection", socket => {
-  console.log("new user");
-  socket.emit("chat-message", "Hello World");
+  // The socket.on method listens for the event type, then runs the callback.
+  socket.on("send-chat-message", message => {
+    /* The socket.broadcast.emit server method sends events
+    to all connected clients except for the sender. */
+    socket.broadcast.emit("chat-message", message);
+  });
 });

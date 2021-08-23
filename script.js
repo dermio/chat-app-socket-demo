@@ -16,7 +16,7 @@ socket.on("chat-message", data => {
   append the message sent by the other client. The message was sent
   from the other client to the server, and from the server to the client
   via the socket. */
-  appendMessage(data);
+  appendMessage(`${data.name}: ${data.message}`);
 });
 
 socket.on("user-connected", name => {

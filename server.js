@@ -24,6 +24,6 @@ io.on("connection", socket => {
   socket.on("send-chat-message", message => {
     /* The socket.broadcast.emit server method sends events
     to all connected clients except for the sender. */
-    socket.broadcast.emit("chat-message", message);
+    socket.broadcast.emit("chat-message", { message, name: users[socket.id] });
   });
 });

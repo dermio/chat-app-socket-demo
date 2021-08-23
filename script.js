@@ -6,6 +6,11 @@ const messageContainer = document.getElementById("message-container");
 const messageForm = document.getElementById("send-container");
 const messageInput = document.getElementById("message-input");
 
+// Get user name and send it to the server.
+const name = prompt("What is your name?");
+appendMessage("You joined");
+socket.emit("new-user", name);
+
 socket.on("chat-message", data => {
   /* When the client hears the `chat-message` event from the server,
   append the message sent by the other client. The message was sent

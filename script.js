@@ -30,6 +30,9 @@ messageForm.addEventListener("submit", event => {
   // Get text message from input.
   let message = messageInput.value;
 
+  // Show message sent by user on their screen.
+  appendMessage(`You: ${message}`);
+
   // Send text message value from client to server via the socket.
   socket.emit("send-chat-message", message);
 

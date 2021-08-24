@@ -4,7 +4,7 @@ const options = {
   }
 };
 
-// io is the server instance
+// io is the server instance.
 const io = require("socket.io")(3000, options);
 
 const users = {}; // Save chat users in an object.

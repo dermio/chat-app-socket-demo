@@ -26,4 +26,13 @@ io.on("connection", socket => {
     to all connected clients except for the sender. */
     socket.broadcast.emit("chat-message", { message, name: users[socket.id] });
   });
+
+  // The socket listens for users disconnecting.
+  socket.on("disconnect", () => {
+    // Broadcast to the other users a user has disconnected.
+    socket.broadcast.emit("user-disconnected", users[socket.id]);
+
+    // Delete user id and name from the users object.
+    delete users[socket.id];
+  });
 });

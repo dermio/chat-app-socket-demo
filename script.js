@@ -24,6 +24,11 @@ socket.on("user-connected", name => {
   appendMessage(`${name} connected`);
 });
 
+socket.on("user-disconnected", name => {
+  // Inform a user has disconnected from the chat.
+  appendMessage(`${name} disconnected`);
+});
+
 messageForm.addEventListener("submit", event => {
   event.preventDefault();
 

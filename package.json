@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/dermio/chat-app-socket-demo.git"
   },
-  "author": "",
+  "author": "dermio",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dermio/chat-app-socket-demo/issues"
